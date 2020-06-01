@@ -17,8 +17,8 @@ android {
     productFlavors {
         shade {
             dimension "app"
-            applicationId 'amirz.shade'
-            testApplicationId 'amirz.shade.tests'
+            applicationId 'com.vs.turbo'
+            testApplicationId 'com.vs.turbo.tests'
             versionName 'Q'
         }
 
@@ -29,16 +29,16 @@ android {
 
     sourceSets {
         shade {
-            aidl.srcDirs = ['shade/aidl']
-            assets.srcDirs = ['shade/assets']
-            res.srcDirs = ['shade/res', 'shade/res_translations', 'shade/res_translations_manual']
-            java.srcDirs = ['shade/src', 'shade/src_flags', 'src_shortcuts_overrides', 'shade/src_backport']
-            manifest.srcFile "shade/AndroidManifest.xml"
+            aidl.srcDirs = ['turbo/aidl']
+            assets.srcDirs = ['turbo/assets']
+            res.srcDirs = ['turbo/res', 'turbo/res_translations', 'turbo/res_translations_manual']
+            java.srcDirs = ['turbo/src', 'turbo/src_flags', 'src_shortcuts_overrides', 'turbo/src_backport']
+            manifest.srcFile "turbo/AndroidManifest.xml"
         }
 
         customUI {
-            java.srcDirs = ['shade/src_ui_overrides']
-            res.srcDirs = ['shade/res_ui_overrides']
+            java.srcDirs = ['turbo/src_ui_overrides']
+            res.srcDirs = ['turbo/res_ui_overrides']
         }
     }
 
@@ -52,4 +52,4 @@ android {
     }
 }
 
-apply from: 'shade/smali.gradle'
+apply from: 'turbo/smali.gradle'

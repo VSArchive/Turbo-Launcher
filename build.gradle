@@ -209,4 +209,4 @@ protobuf {
     }
 }
 
-apply from: 'shade/shade.gradle'
+apply from: 'turbo/turbo.gradle'
