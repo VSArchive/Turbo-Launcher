@@ -40,7 +40,7 @@
             android:defaultValue="true"
             android:persistent="true" />
 
-        <amirz.turbo.settings.PredictionPreference
+        <vs.turbo.settings.PredictionPreference
             android:key="pref_predictions"
             android:title="@string/title_app_suggestions"
             android:defaultValue="true"
@@ -89,7 +89,7 @@
             android:defaultValue=""
             android:persistent="true" />
 
-        <amirz.turbo.settings.ReloadingListPreference
+        <vs.turbo.settings.ReloadingListPreference
             android:key="pref_icon_pack"
             android:title="@string/icon_pack"
             android:summary="%s"
@@ -119,14 +119,14 @@
     <PreferenceCategory android:key="category_customization"
         android:title="@string/category_customization">
 
-        <amirz.turbo.settings.ReloadingListPreference
+        <vs.turbo.settings.ReloadingListPreference
             android:key="pref_dock_search"
             android:title="@string/dock_search"
             android:summary="%s"
             android:defaultValue=""
             android:persistent="true" />
 
-        <amirz.turbo.settings.ReloadingListPreference
+        <vs.turbo.settings.ReloadingListPreference
             android:key="pref_feed_provider"
             android:title="@string/feed_provider"
             android:summary="%s"

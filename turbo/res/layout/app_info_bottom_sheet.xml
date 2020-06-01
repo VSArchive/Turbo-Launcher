@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<amirz.turbo.customization.InfoBottomSheet
+<vs.turbo.customization.InfoBottomSheet
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -34,10 +34,10 @@
 
     <fragment
         android:id="@+id/sheet_prefs"
-        android:name="amirz.turbo.customization.InfoBottomSheet$PrefsFragment"
+        android:name="vs.turbo.customization.InfoBottomSheet$PrefsFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="40dp" />
 
-</amirz.turbo.customization.InfoBottomSheet>
+</vs.turbo.customization.InfoBottomSheet>

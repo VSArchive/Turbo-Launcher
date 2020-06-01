@@ -3,23 +3,23 @@
     <string name="derived_app_name" translatable="false">@string/shade_app_name</string>
 
     <!-- Various classes overriden by projects/build flavors. -->
-    <string name="app_filter_class" translatable="false">amirz.turbo.TurboAppFilter</string>
-    <string name="icon_provider_class" translatable="false">amirz.turbo.icons.ThirdPartyIconProvider</string>
-    <string name="drawable_factory_class" translatable="false">amirz.turbo.icons.ThirdPartyDrawableFactory</string>
-    <string name="app_transition_manager_class" translatable="false">amirz.turbo.animations.TransitionManager</string>
-    <string name="system_shortcut_factory_class" translatable="false">amirz.turbo.customization.TurboShortcutFactory</string>
-    <string name="main_process_initializer_class" translatable="false">amirz.turbo.TurboProcessInitializer</string>
-<!--    <string name="app_launch_tracker_class" translatable="false">amirz.turbo.appprediction.TurboTracker</string>-->
+    <string name="app_filter_class" translatable="false">vs.turbo.TurboAppFilter</string>
+    <string name="icon_provider_class" translatable="false">vs.turbo.icons.ThirdPartyIconProvider</string>
+    <string name="drawable_factory_class" translatable="false">vs.turbo.icons.ThirdPartyDrawableFactory</string>
+    <string name="app_transition_manager_class" translatable="false">vs.turbo.animations.TransitionManager</string>
+    <string name="system_shortcut_factory_class" translatable="false">vs.turbo.customization.TurboShortcutFactory</string>
+    <string name="main_process_initializer_class" translatable="false">vs.turbo.TurboProcessInitializer</string>
+<!--    <string name="app_launch_tracker_class" translatable="false">vs.turbo.appprediction.TurboTracker</string>-->
 
     <!-- String representing the fragment class for settings activity.-->
-    <string name="settings_fragment_name" translatable="false">amirz.turbo.TurboSettings$TurboSettingsFragment</string>
+    <string name="settings_fragment_name" translatable="false">vs.turbo.TurboSettings$TurboSettingsFragment</string>
 
     <string name="icon_shape_override_path_circle" translatable="false">M50 0A50 50,0,1,1,50 100A50 50,0,1,1,50 0</string>
 
     <!-- Values for icon shape overrides. These should correspond to entries defined
     in icon_shape_override_paths_names -->
     <string-array translatable="false" name="icon_shape_override_paths_values">
-        <item></item>
+        <item />
         <item>M50,0L100,0 100,100 0,100 0,0z</item>
         <item>M50,0L80,0 A20,20,0,0 1 100,20 L100,80 A20,20,0,0 1 80,100 L20,100 A20,20,0,0 1 0,80 L 0,20 A20,20,0,0 1 20,0z</item>
         <item>M50,0 C10,0 0,10 0,50 0,90 10,100 50,100 90,100 100,90 100,50 100,10 90,0 50,0 Z</item>
