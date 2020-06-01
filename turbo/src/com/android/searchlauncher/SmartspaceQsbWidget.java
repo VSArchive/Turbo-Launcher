@@ -18,7 +18,7 @@ import com.android.launcher3.Launcher;
 import com.android.launcher3.R;
 import com.android.launcher3.qsb.QsbContainerView;
 
-import amirz.shade.views.ThemedSmartspaceHostView;
+import amirz.turbo.views.ThemedSmartspaceHostView;
 
 import static android.appwidget.AppWidgetManager.ACTION_APPWIDGET_BIND;
 import static android.appwidget.AppWidgetManager.EXTRA_APPWIDGET_ID;

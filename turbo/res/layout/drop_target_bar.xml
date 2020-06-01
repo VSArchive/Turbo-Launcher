@@ -33,7 +33,7 @@
         android:text="@string/remove_drop_target_label" />
 
     <!-- Hide target -->
-    <amirz.shade.hidden.HideDropTarget
+    <amirz.turbo.hidden.HideDropTarget
         android:id="@+id/hide_target_text"
         style="@style/DropTargetButton"
         android:layout_width="wrap_content"

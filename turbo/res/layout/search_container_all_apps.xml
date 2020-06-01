@@ -13,7 +13,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<amirz.shade.search.AllAppsQsb xmlns:android="http://schemas.android.com/apk/res/android"
+<amirz.turbo.search.AllAppsQsb xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@id/search_container_all_apps"
     android:layout_width="match_parent"
     android:layout_height="@dimen/qsb_wrapper_height"
@@ -24,13 +24,13 @@
 
     <fragment
         android:id="@+id/search_wrapper_view"
-        android:name="amirz.shade.search.AllAppsQsb$HotseatQsbFragment"
+        android:name="amirz.turbo.search.AllAppsQsb$HotseatQsbFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:tag="qsb_view" />
 
-    <amirz.shade.search.AllAppsSearchBackground
+    <amirz.turbo.search.AllAppsSearchBackground
         android:id="@+id/fallback_search_view"
         android:layout_width="match_parent"
         android:layout_height="@dimen/all_apps_search_bar_field_height"
@@ -38,7 +38,7 @@
         android:padding="@dimen/qsb_widget_padding"
         android:background="@drawable/bg_qsb_click_feedback">
 
-        <amirz.shade.search.EditText
+        <amirz.turbo.search.EditText
             android:id="@+id/fallback_search_view_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -57,6 +57,6 @@
             android:textCursorDrawable="@drawable/text_cursor_material"
             android:textSize="16sp" />
 
-    </amirz.shade.search.AllAppsSearchBackground>
+    </amirz.turbo.search.AllAppsSearchBackground>
 
-</amirz.shade.search.AllAppsQsb>
+</amirz.turbo.search.AllAppsQsb>

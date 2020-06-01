@@ -25,7 +25,7 @@ import com.android.launcher3.LauncherState;
 import com.android.launcher3.R;
 import com.android.launcher3.userevent.nano.LauncherLogProto.ContainerType;
 
-import amirz.shade.search.AllAppsQsb;
+import amirz.turbo.search.AllAppsQsb;
 
 /**
  * Definition for AllApps state

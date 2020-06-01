@@ -67,7 +67,7 @@
         attributes and intent filters the same
         -->
         <activity
-            android:name="amirz.shade.ShadeLauncher"
+            android:name="amirz.turbo.TurboLauncher"
             android:label="@string/shade_app_name_short"
             android:launchMode="singleTask"
             android:clearTaskOnLaunch="true"
@@ -100,7 +100,7 @@
         The settings activity. To extend point settings_fragment_name to appropriate fragment class
         -->
         <activity
-            android:name="amirz.shade.ShadeSettings"
+            android:name="amirz.turbo.TurboSettings"
             android:label="@string/settings_button_text"
             android:theme="@style/Shade.SettingsTheme"
             android:autoRemoveFromRecents="true">
@@ -118,7 +118,7 @@
         <!--
         The activity that shows the Add To Home screen popup in Chrome.
         -->
-        <activity android:name="amirz.shade.dragndrop.ShadeAddItemActivity"
+        <activity android:name="amirz.turbo.dragndrop.ShadeAddItemActivity"
             android:theme="@style/AppItemActivityTheme"
             android:excludeFromRecents="true"
             android:autoRemoveFromRecents="true"
@@ -144,7 +144,7 @@
 
         <!-- The service for double tap to sleep -->
         <service
-            android:name="amirz.shade.sleep.SleepService"
+            android:name="amirz.turbo.sleep.SleepService"
             android:enabled="@bool/atleast_p"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
             <intent-filter>

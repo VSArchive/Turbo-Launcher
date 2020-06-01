@@ -38,7 +38,7 @@ import com.android.launcher3.util.TouchController;
 
 import java.io.PrintWriter;
 
-import amirz.shade.hidden.HiddenAppsDrawerState;
+import amirz.turbo.hidden.HiddenAppsDrawerState;
 
 import static com.android.launcher3.AbstractFloatingView.TYPE_ALL;
 import static com.android.launcher3.AbstractFloatingView.TYPE_HIDE_BACK_BUTTON;

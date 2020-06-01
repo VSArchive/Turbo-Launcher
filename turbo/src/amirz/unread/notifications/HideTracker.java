@@ -9,7 +9,7 @@ import com.android.launcher3.compat.LauncherAppsCompat;
 
 import java.util.List;
 
-import amirz.shade.hidden.HiddenAppsDatabase;
+import amirz.turbo.hidden.HiddenAppsDatabase;
 
 public class HideTracker {
     private final Context mContext;
