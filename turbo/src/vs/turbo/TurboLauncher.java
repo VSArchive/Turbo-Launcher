@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import com.android.launcher3.Launcher;
 
-import vs.turbo.customization.ShadeStyle;
+import vs.turbo.customization.TurboStyle;
 
 public class TurboLauncher extends Launcher {
     private enum State {
@@ -28,7 +28,7 @@ public class TurboLauncher extends Launcher {
     public void onCreate(Bundle savedInstanceState) {
         TurboRestarter.cancelRestart(this);
         TurboFont.override(this);
-        ShadeStyle.override(this);
+        TurboStyle.override(this);
         super.onCreate(savedInstanceState);
     }
 

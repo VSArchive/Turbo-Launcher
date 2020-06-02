@@ -21,8 +21,8 @@ import com.android.launcher3.Utilities;
 import com.android.launcher3.settings.SettingsActivity;
 
 import vs.turbo.customization.IconDatabase;
-import vs.turbo.customization.ShadeStyle;
 import vs.turbo.customization.IconShapeOverride;
+import vs.turbo.customization.TurboStyle;
 import vs.turbo.icons.pack.IconPackManager;
 import vs.turbo.settings.DockSearchPrefSetter;
 import vs.turbo.settings.FeedProviderPrefSetter;
@@ -30,13 +30,13 @@ import vs.turbo.settings.IconPackPrefSetter;
 import vs.turbo.settings.ReloadingListPreference;
 import vs.turbo.util.AppReloader;
 
+import static com.android.launcher3.util.Themes.KEY_DEVICE_THEME;
 import static vs.turbo.TurboFont.KEY_FONT;
 import static vs.turbo.TurboLauncherCallbacks.KEY_ENABLE_MINUS_ONE;
 import static vs.turbo.TurboLauncherCallbacks.KEY_FEED_PROVIDER;
-import static vs.turbo.customization.ShadeStyle.KEY_THEME;
 import static vs.turbo.customization.DockSearch.KEY_DOCK_SEARCH;
 import static vs.turbo.customization.IconShapeOverride.KEY_ICON_SHAPE;
-import static com.android.launcher3.util.Themes.KEY_DEVICE_THEME;
+import static vs.turbo.customization.TurboStyle.KEY_THEME;
 
 public class TurboSettings extends SettingsActivity {
     public interface OnResumePreferenceCallback {
@@ -46,7 +46,7 @@ public class TurboSettings extends SettingsActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         TurboFont.override(this);
-        ShadeStyle.override(this);
+        TurboStyle.override(this);
         super.onCreate(savedInstanceState);
         getActionBar().setDisplayHomeAsUpEnabled(true);
     }
@@ -77,7 +77,7 @@ public class TurboSettings extends SettingsActivity {
             IconPackManager.get(context);
 
             // Customization
-            ReloadingListPreference icons = (ReloadingListPreference) findPreference(KEY_ICON_PACK);
+            ReloadingListPreference icons = findPreference(KEY_ICON_PACK);
             icons.setValue(IconDatabase.getGlobal(context));
             icons.setOnReloadListener(new IconPackPrefSetter(context));
             icons.setOnPreferenceChangeListener((pref, val) -> {
@@ -87,7 +87,7 @@ public class TurboSettings extends SettingsActivity {
                 return true;
             });
 
-            PreferenceCategory style = (PreferenceCategory) findPreference(CATEGORY_STYLE);
+            PreferenceCategory style = findPreference(CATEGORY_STYLE);
             Preference iconShapeOverride = findPreference(KEY_ICON_SHAPE);
             if (iconShapeOverride != null) {
                 if (Utilities.ATLEAST_OREO) {
@@ -113,11 +113,11 @@ public class TurboSettings extends SettingsActivity {
             findPreference(KEY_FONT).setOnPreferenceChangeListener(restart);
 
             ReloadingListPreference search =
-                    (ReloadingListPreference) findPreference(KEY_DOCK_SEARCH);
+                    findPreference(KEY_DOCK_SEARCH);
             search.setOnReloadListener(new DockSearchPrefSetter(context));
 
             ReloadingListPreference feed =
-                    (ReloadingListPreference) findPreference(KEY_FEED_PROVIDER);
+                    findPreference(KEY_FEED_PROVIDER);
             feed.setOnReloadListener(new FeedProviderPrefSetter(context));
             feed.setOnPreferenceChangeListener((pref, val) -> {
                 Utilities.getPrefs(context).edit()

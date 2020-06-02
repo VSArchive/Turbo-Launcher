@@ -15,14 +15,10 @@
  */
 package com.android.launcher3.touch;
 
-import static android.view.MotionEvent.ACTION_CANCEL;
-import static android.view.MotionEvent.ACTION_DOWN;
-import static android.view.MotionEvent.ACTION_MOVE;
-import static android.view.MotionEvent.ACTION_POINTER_UP;
-import static android.view.MotionEvent.ACTION_UP;
-
-import static com.android.launcher3.LauncherState.NORMAL;
-
+import android.app.admin.DevicePolicyManager;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.PointF;
 import android.graphics.Rect;
 import android.view.GestureDetector;
@@ -34,19 +30,27 @@ import android.view.ViewConfiguration;
 
 import com.android.launcher3.AbstractFloatingView;
 import com.android.launcher3.CellLayout;
+import com.android.launcher3.DeviceAdmin;
 import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.Launcher;
 import com.android.launcher3.Workspace;
 import com.android.launcher3.dragndrop.DragLayer;
-import com.android.launcher3.views.OptionsPopupView;
 import com.android.launcher3.userevent.nano.LauncherLogProto.Action;
 import com.android.launcher3.userevent.nano.LauncherLogProto.ContainerType;
+import com.android.launcher3.views.OptionsPopupView;
+
+import static android.view.MotionEvent.ACTION_CANCEL;
+import static android.view.MotionEvent.ACTION_DOWN;
+import static android.view.MotionEvent.ACTION_MOVE;
+import static android.view.MotionEvent.ACTION_POINTER_UP;
+import static android.view.MotionEvent.ACTION_UP;
+import static com.android.launcher3.LauncherState.NORMAL;
 
 /**
  * Helper class to handle touch on empty space in workspace and show options popup on long press
  */
 public class WorkspaceTouchListener extends GestureDetector.SimpleOnGestureListener
-        implements OnTouchListener {
+        implements OnTouchListener, GestureDetector.OnDoubleTapListener {
 
     /**
      * STATE_PENDING_PARENT_INFORM is the state between longPress performed & the next motionEvent.
@@ -69,6 +73,10 @@ public class WorkspaceTouchListener extends GestureDetector.SimpleOnGestureListe
 
     private final GestureDetector mGestureDetector;
 
+    static final int RESULT_ENABLE = 1;
+    DevicePolicyManager deviceManger;
+    ComponentName compName;
+
     public WorkspaceTouchListener(Launcher launcher, Workspace workspace) {
         mLauncher = launcher;
         mWorkspace = workspace;
@@ -76,6 +84,36 @@ public class WorkspaceTouchListener extends GestureDetector.SimpleOnGestureListe
         // likely to cause movement.
         mTouchSlop = 2 * ViewConfiguration.get(launcher).getScaledTouchSlop();
         mGestureDetector = new GestureDetector(workspace.getContext(), this);
+    }
+
+    @Override
+    public boolean onDoubleTap(MotionEvent e) {
+        return false;
+    }
+
+    @Override
+    public boolean onDoubleTapEvent(MotionEvent motionEvent) {
+        deviceManger = (DevicePolicyManager)
+                mLauncher.getSystemService(Context.DEVICE_POLICY_SERVICE);
+        compName = new ComponentName(mLauncher, DeviceAdmin.class);
+        boolean active = deviceManger.isAdminActive(compName);
+        if (active) {
+            lockPhone();
+        } else {
+            enablePhone();
+        }
+        return false;
+    }
+
+    public void enablePhone() {
+        Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
+        intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, compName);
+        intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION, "You should enable the app!");
+        mLauncher.startActivityForResult(intent, RESULT_ENABLE);
+    }
+
+    public void lockPhone() {
+        deviceManger.lockNow();
     }
 
     @Override

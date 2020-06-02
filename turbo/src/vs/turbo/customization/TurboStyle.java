@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ShadeStyle {
+public class TurboStyle {
     public static final String KEY_THEME = "pref_theme";
 
     private static final Map<String, Integer> sThemes;

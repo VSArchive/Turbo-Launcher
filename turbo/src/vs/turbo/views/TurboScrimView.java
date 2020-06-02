@@ -15,14 +15,6 @@
  */
 package vs.turbo.views;
 
-import static androidx.core.graphics.ColorUtils.compositeColors;
-import static com.android.launcher3.LauncherState.ALL_APPS_HEADER_EXTRA;
-import static com.android.launcher3.LauncherState.BACKGROUND_APP;
-import static com.android.launcher3.LauncherState.OVERVIEW;
-import static com.android.launcher3.anim.Interpolators.ACCEL;
-import static com.android.launcher3.anim.Interpolators.LINEAR;
-import static com.android.launcher3.icons.GraphicsUtils.setColorAlphaBound;
-
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -43,14 +35,22 @@ import com.android.launcher3.uioverrides.WallpaperColorInfo;
 import com.android.launcher3.util.Themes;
 import com.android.launcher3.views.ScrimView;
 
+import static androidx.core.graphics.ColorUtils.compositeColors;
+import static com.android.launcher3.LauncherState.ALL_APPS_HEADER_EXTRA;
+import static com.android.launcher3.LauncherState.BACKGROUND_APP;
+import static com.android.launcher3.LauncherState.OVERVIEW;
+import static com.android.launcher3.anim.Interpolators.ACCEL;
+import static com.android.launcher3.anim.Interpolators.LINEAR;
+import static com.android.launcher3.icons.GraphicsUtils.setColorAlphaBound;
+
 /**
  * Scrim used for all-apps and shelf in Overview
  * In transposed layout, it behaves as a simple color scrim.
  * In portrait layout, it draws a rounded rect such that
- *    From normal state to overview state, the shelf just fades in and does not move
- *    From overview state to all-apps state the shelf moves up and fades in to cover the screen
+ * From normal state to overview state, the shelf just fades in and does not move
+ * From overview state to all-apps state the shelf moves up and fades in to cover the screen
  */
-public class ShadeScrimView extends ScrimView {
+public class TurboScrimView extends ScrimView {
 
     // If the progress is more than this, shelf follows the finger, otherwise it moves faster to
     // cover the whole screen
@@ -96,7 +96,7 @@ public class ShadeScrimView extends ScrimView {
 
     //private Mode mSysUINavigationMode;
 
-    public ShadeScrimView(Context context, AttributeSet attrs) {
+    public TurboScrimView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mMaxScrimAlpha = Math.round(OVERVIEW.getOverviewScrimAlpha(mLauncher) * 255);
 

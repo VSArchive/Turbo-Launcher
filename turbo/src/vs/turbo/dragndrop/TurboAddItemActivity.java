@@ -5,13 +5,13 @@ import android.os.Bundle;
 import com.android.launcher3.dragndrop.AddItemActivity;
 
 import vs.turbo.TurboFont;
-import vs.turbo.customization.ShadeStyle;
+import vs.turbo.customization.TurboStyle;
 
-public class ShadeAddItemActivity extends AddItemActivity {
+public class TurboAddItemActivity extends AddItemActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         TurboFont.override(this);
-        ShadeStyle.override(this);
+        TurboStyle.override(this);
         super.onCreate(savedInstanceState);
     }
 }

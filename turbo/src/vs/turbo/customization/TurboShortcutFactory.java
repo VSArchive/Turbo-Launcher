@@ -14,8 +14,8 @@ import com.android.launcher3.userevent.nano.LauncherLogProto;
 import com.android.launcher3.util.PackageManagerHelper;
 
 @SuppressWarnings("unused")
-public class ShadeShortcutFactory extends SystemShortcutFactory {
-    public ShadeShortcutFactory(Context context) {
+public class TurboShortcutFactory extends SystemShortcutFactory {
+    public TurboShortcutFactory(Context context) {
         super(new BottomSheetShortcut(),
                 new SystemShortcut.Widgets(),
                 new SystemShortcut.Install());

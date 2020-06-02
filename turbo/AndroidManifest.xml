@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
 /*
 **
 ** Copyright 2008, The Android Open Source Project
@@ -20,20 +19,26 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.android.launcher3">
-    <uses-sdk android:targetSdkVersion="29" android:minSdkVersion="24"/>
+
+    <uses-sdk
+        android:minSdkVersion="24"
+        android:targetSdkVersion="29" />
     <!--
     Manifest entries specific to Launcher3. This is merged with AndroidManifest-common.xml.
     Refer comments around specific entries on how to extend individual components.
     -->
 
     <!-- Tablet support -->
-    <uses-feature android:name="android.hardware.telephony" android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
 
     <!-- Swipe down for notifications -->
     <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
 
     <!-- App prediction -->
-    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
         tools:ignore="ProtectedPermissions" />
 
     <!-- Home button overlay -->
@@ -48,15 +53,15 @@
 
     <application
         android:backupAgent="com.android.launcher3.LauncherBackupAgent"
-        android:fullBackupOnly="true"
         android:fullBackupContent="@xml/backupscheme"
+        android:fullBackupOnly="true"
         android:hardwareAccelerated="true"
         android:icon="@drawable/ic_launcher_home"
         android:label="@string/derived_app_name"
-        android:theme="@style/AppTheme"
         android:largeHeap="@bool/config_largeHeap"
         android:restoreAnyVersion="true"
-        android:supportsRtl="true" >
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
 
         <activity
             android:name="com.android.launcher3.Launcher"
@@ -68,22 +73,23 @@
         -->
         <activity
             android:name="vs.turbo.TurboLauncher"
+            android:clearTaskOnLaunch="true"
+            android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize|screenLayout|smallestScreenSize"
+            android:enabled="true"
             android:label="@string/shade_app_name_short"
             android:launchMode="singleTask"
-            android:clearTaskOnLaunch="true"
-            android:stateNotNeeded="true"
-            android:windowSoftInputMode="adjustPan"
-            android:screenOrientation="unspecified"
-            android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize|screenLayout|smallestScreenSize"
             android:resizeableActivity="true"
             android:resumeWhilePausing="true"
+            android:screenOrientation="unspecified"
+            android:stateNotNeeded="true"
             android:taskAffinity=""
-            android:enabled="true">
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.HOME" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.MONKEY"/>
+                <category android:name="android.intent.category.MONKEY" />
                 <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.LAUNCHER_APP" />
             </intent-filter>
@@ -101,9 +107,9 @@
         -->
         <activity
             android:name="vs.turbo.TurboSettings"
+            android:autoRemoveFromRecents="true"
             android:label="@string/settings_button_text"
-            android:theme="@style/Shade.SettingsTheme"
-            android:autoRemoveFromRecents="true">
+            android:theme="@style/Shade.SettingsTheme">
             <intent-filter>
                 <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -118,11 +124,12 @@
         <!--
         The activity that shows the Add To Home screen popup in Chrome.
         -->
-        <activity android:name="vs.turbo.dragndrop.ShadeAddItemActivity"
-            android:theme="@style/AppItemActivityTheme"
-            android:excludeFromRecents="true"
+        <activity
+            android:name="vs.turbo.dragndrop.TurboAddItemActivity"
             android:autoRemoveFromRecents="true"
-            android:label="@string/action_add_to_workspace" >
+            android:excludeFromRecents="true"
+            android:label="@string/action_add_to_workspace"
+            android:theme="@style/AppItemActivityTheme">
             <intent-filter>
                 <action android:name="android.content.pm.action.CONFIRM_PIN_SHORTCUT" />
                 <action android:name="android.content.pm.action.CONFIRM_PIN_APPWIDGET" />
@@ -157,7 +164,8 @@
         </service>
 
         <!-- Widget shortcut to any activity -->
-        <activity android:name="vs.shortcut.CreateShortcut"
+        <activity
+            android:name="vs.shortcut.CreateShortcut"
             android:icon="@drawable/ic_launcher_shortcut"
             android:label="@string/any_activity_shortcut"
             android:theme="@style/ShortcutTheme">

@@ -34,17 +34,17 @@ import vs.turbo.search.AllAppsQsb;
 import vs.turbo.sleep.WorkspaceSleepListener;
 import vs.unread.UnreadSession;
 
-import static vs.turbo.TurboFont.DEFAULT_FONT;
-import static vs.turbo.TurboFont.KEY_FONT;
-import static vs.turbo.customization.DockSearch.KEY_DOCK_SEARCH;
-import static vs.turbo.customization.ShadeStyle.KEY_THEME;
-import static vs.turbo.animations.TransitionManager.KEY_FADING_TRANSITION;
 import static com.android.launcher3.LauncherState.ALL_APPS;
 import static com.android.launcher3.LauncherState.NORMAL;
 import static com.android.launcher3.allapps.PersonalWorkSlidingTabStrip.KEY_SHOWED_PEEK_WORK_TAB;
 import static com.android.launcher3.settings.SettingsActivity.GRID_OPTIONS_PREFERENCE_KEY;
 import static com.android.launcher3.util.Themes.KEY_DEVICE_THEME;
 import static com.android.searchlauncher.SmartspaceQsbWidget.KEY_SMARTSPACE;
+import static vs.turbo.TurboFont.DEFAULT_FONT;
+import static vs.turbo.TurboFont.KEY_FONT;
+import static vs.turbo.animations.TransitionManager.KEY_FADING_TRANSITION;
+import static vs.turbo.customization.DockSearch.KEY_DOCK_SEARCH;
+import static vs.turbo.customization.TurboStyle.KEY_THEME;
 
 public class TurboLauncherCallbacks implements LauncherCallbacks,
         SharedPreferences.OnSharedPreferenceChangeListener,

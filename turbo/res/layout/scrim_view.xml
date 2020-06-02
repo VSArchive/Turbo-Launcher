@@ -13,8 +13,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<vs.turbo.views.ShadeScrimView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<vs.turbo.views.TurboScrimView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/scrim_view" />
