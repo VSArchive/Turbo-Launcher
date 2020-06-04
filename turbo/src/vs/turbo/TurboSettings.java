@@ -77,7 +77,7 @@ public class TurboSettings extends SettingsActivity {
             IconPackManager.get(context);
 
             // Customization
-            ReloadingListPreference icons = findPreference(KEY_ICON_PACK);
+            ReloadingListPreference icons = (ReloadingListPreference) findPreference(KEY_ICON_PACK);
             icons.setValue(IconDatabase.getGlobal(context));
             icons.setOnReloadListener(new IconPackPrefSetter(context));
             icons.setOnPreferenceChangeListener((pref, val) -> {
@@ -87,7 +87,7 @@ public class TurboSettings extends SettingsActivity {
                 return true;
             });
 
-            PreferenceCategory style = findPreference(CATEGORY_STYLE);
+            PreferenceCategory style = (PreferenceCategory) findPreference(CATEGORY_STYLE);
             Preference iconShapeOverride = findPreference(KEY_ICON_SHAPE);
             if (iconShapeOverride != null) {
                 if (Utilities.ATLEAST_OREO) {
@@ -113,11 +113,11 @@ public class TurboSettings extends SettingsActivity {
             findPreference(KEY_FONT).setOnPreferenceChangeListener(restart);
 
             ReloadingListPreference search =
-                    findPreference(KEY_DOCK_SEARCH);
+                    (ReloadingListPreference) findPreference(KEY_DOCK_SEARCH);
             search.setOnReloadListener(new DockSearchPrefSetter(context));
 
             ReloadingListPreference feed =
-                    findPreference(KEY_FEED_PROVIDER);
+                    (ReloadingListPreference) findPreference(KEY_FEED_PROVIDER);
             feed.setOnReloadListener(new FeedProviderPrefSetter(context));
             feed.setOnPreferenceChangeListener((pref, val) -> {
                 Utilities.getPrefs(context).edit()

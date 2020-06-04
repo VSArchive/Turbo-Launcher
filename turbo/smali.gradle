@@ -12,7 +12,7 @@ dependencies {
 }
 
 task 'buildShadeSmali' {
-    def smaliInputDir = file('shade/smali')
+    def smaliInputDir = file('turbo/smali')
     def dexOutputDir = file('build/shadesmali')
     def jarOutputDir = file('build/shadelibs')
 
