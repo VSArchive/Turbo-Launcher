@@ -3,7 +3,7 @@ final String FRAMEWORK_PREBUILTS_DIR = "prebuilts"
 android {
     defaultConfig {
         applicationVariants.all { variant ->
-            if (variant.flavorName.startsWith("shade")) {
+            if (variant.flavorName.startsWith("turbo")) {
                 variant.outputs.each {
                     it.versionNameOverride new Date().format("yyyy-MM-dd HH:mm")
                     if (variant.buildType.name == "release") {
@@ -15,7 +15,7 @@ android {
     }
 
     productFlavors {
-        shade {
+        turbo {
             dimension "app"
             applicationId 'com.vs.turbo'
             testApplicationId 'com.vs.turbo.tests'
@@ -28,7 +28,7 @@ android {
     }
 
     sourceSets {
-        shade {
+        turbo {
             aidl.srcDirs = ['turbo/aidl']
             assets.srcDirs = ['turbo/assets']
             res.srcDirs = ['turbo/res', 'turbo/res_translations', 'turbo/res_translations_manual']
